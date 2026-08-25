@@ -157,9 +157,6 @@ resource "aws_instance" "nginx_new" {
   vpc_security_group_ids      = [aws_security_group.intern_sg.id]
   key_name                    = aws_key_pair.internship.key_name
   associate_public_ip_address = true
-
-  user_data = file("${path.module}/user_data.sh")
-
   tags = {
     Name = "int-declarative"
   }
